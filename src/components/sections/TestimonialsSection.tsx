@@ -4,49 +4,42 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    name: "Ritika",
-    role: "PCOS Management Client, 29",
+    name: "Ritika, 29",
     content:
       "I struggled with weight gain problem for years, trying every diet without success. Dt Saloni’s personalised plan finally helped me shed kilos in a healthy, sustainable way. I feel lighter, more energetic, and confident without ever feeling deprived.",
     rating: 4.8,
   },
   {
-    name: "Neha",
-    role: "Hormonal Health Client, 26",
+    name: "Neha, 26",
     content:
       "Living with PCOS was exhausting, but Dt Saloni helped me. The diet plan balanced my hormones, reduced bloating, and even regulated my cycle. I finally feel in control of my health again.",
     rating: 4.6,
   },
   {
-    name: "Simran",
-    role: "Hormonal Balance Client, 31",
+    name: "Simran, 31",
     content:
       "Mood swings and low energy used to affect my daily life. Dt Saloni helped me balance my hormones and improve my sleep. I wake up refreshed and motivated every morning.",
     rating: 4.3,
   },
   {
-    name : "Aman",
-    role : "Hyperthyrodism, 34",
+    name : "Aman, 34",
     content : "I had constant fatigue and weight fluctuations due to hypothyroidism. With the help of Dt Saloni, I managed to lose 15 kgs and my thyroid reduced from 6.2 to 4.1 in 6 months. Now I can focus better at work and feel like myself again.",
 rating: 4.2,
   },
   {
-    name : "Sandeep",
-    role : "Weight loss client",
+    name : "Sandeep, 44",
     content : "I used to feel tired all the time. After following this weight loss plan, I not only lost 10 kilos in 3 months but also regained my energy. I can play with my kids without feeling exhausted, and that’s priceless.",
     rating : 3.9,
 
   },
   {
-    name: "Amit",
-    role: "Diabetes Care Client, 45",
+    name: "Amit, 45",
     content:
       "My sugar levels were always unstable, and I relied heavily on medication. With Dt Saloni’s guidance, I learned how to eat smart and manage my diabetes naturally. My HbA1c reduced from 10.9 to 7.5 in 3 months. My doctor was amazed at the progress.",
     rating: 4.7,
   },
   {
-    name: "Karan",
-    role: "Weight Loss Client, 28",
+    name: "Karan, 28",
     content:
       "What I love most about this programme is the constant support. The daily motivation on WhatsApp kept me accountable, and the personalised plan felt like it was made just for me. It’s more than a diet- it’s a lifestyle change.",
     rating: 4.4,
@@ -143,10 +136,6 @@ const TestimonialsSection = () => {
                     <h4 className="font-display font-semibold text-gray-900">
                       {testimonial.name}
                     </h4>
-
-                    <p className="font-body text-sm text-gray-500">
-                      {testimonial.role}
-                    </p>
                   </div>
                 </div>
 
