@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Nutrivio Portfolio - Wellness Design System
+   Primary: Deep Green #1B4D3E
+   Secondary: Soft Beige #F5E9DA
+   Accent: Luxe Gold #C9A646
+   Neutral Dark: Charcoal Gray #333333
+   Neutral Light: Off-White #FAFAF7
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Navy Blue - Primary */
+    --primary: 220 50% 20%;
+    --primary-foreground: 40 33% 96%;
+
+    /* Off-White - Background */
+    --background: 60 20% 98%;
+    --foreground: 0 0% 20%;
+
+    /* Soft Beige - Secondary */
+    --secondary: 30 45% 91%;
+    --secondary-foreground: 0 0% 20%;
+
+    /* Luxe Gold - Accent */
+    --accent: 43 52% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Card styles */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+
+    /* Muted styles */
+    --muted: 30 20% 94%;
+    --muted-foreground: 0 0% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 160 47% 20%;
+
+    --radius: 0.75rem;
+
+    /* Custom variables */
+    --gold: 43 52% 53%;
+    --cream: 30 45% 91%;
+    --navy: 220 50% 20%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 160 47% 20%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 30 45% 91%;
+    --sidebar-accent-foreground: 0 0% 20%;
+    --sidebar-border: 30 20% 88%;
+    --sidebar-ring: 160 47% 20%;
+  }
+
+  .dark {
+    --primary: 220 50% 35%;
+    --primary-foreground: 40 33% 96%;
+
+    --background: 0 0% 8%;
+    --foreground: 40 33% 96%;
+
+    --secondary: 30 15% 15%;
+    --secondary-foreground: 40 33% 96%;
+
+    --accent: 43 52% 53%;
+    --accent-foreground: 0 0% 10%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 40 33% 96%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 40 33% 96%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 43 52% 53%;
+
+    --sidebar-background: 0 0% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 160 47% 35%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 43 52% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Lato', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-body {
+    font-family: 'Lato', sans-serif;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-padding {
+    @apply px-4 md:px-6 lg:px-8;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--secondary));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent));
+}
