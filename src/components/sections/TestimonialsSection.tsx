@@ -1,107 +1,170 @@
+import { useState } from "react";
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    name: "Coming Soon",
-    role: "Client Testimonial",
+    name: "Ritika",
+    role: "PCOS Management Client, 29",
     content:
-      "Testimonials from satisfied clients will be displayed here. Real stories of transformation and success.",
-    rating: 5,
+      "I struggled with weight gain problem for years, trying every diet without success. Dt Saloni’s personalised plan finally helped me shed kilos in a healthy, sustainable way. I feel lighter, more energetic, and confident without ever feeling deprived.",
+    rating: 0.8,
   },
   {
-    name: "Coming Soon",
-    role: "Client Testimonial",
+    name: "Neha",
+    role: "Hormonal Health Client, 26",
     content:
-      "Share your journey with Nutrivio and inspire others on their path to wellness.",
-    rating: 5,
+      "Living with PCOS was exhausting, but Dt Saloni helped me. The diet plan balanced my hormones, reduced bloating, and even regulated my cycle. I finally feel in control of my health again.",
+    rating: 1.6,
   },
   {
-    name: "Coming Soon",
-    role: "Client Testimonial",
+    name: "Simran",
+    role: "Hormonal Balance Client, 31",
     content:
-      "Your success story could be featured here. Let's begin your transformation today.",
-    rating: 5,
+      "Mood swings and low energy used to affect my daily life. Dt Saloni helped me balance my hormones and improve my sleep. I wake up refreshed and motivated every morning.",
+    rating: 4.3,
+  },
+  {
+    name : "Aman",
+    role : "Hyperthyrodism, 34",
+    content : "I had constant fatigue and weight fluctuations due to hypothyroidism. With the help of Dt Saloni, I managed to lose 15 kgs and my thyroid reduced from 6.2 to 4.1 in 6 months. Now I can focus better at work and feel like myself again.",
+rating: 4.2,
+  },
+  {
+    name : "Sandeep",
+    role : "Weight loss client",
+    content : "I used to feel tired all the time. After following this weight loss plan, I not only lost 10 kilos in 3 months but also regained my energy. I can play with my kids without feeling exhausted, and that’s priceless.",
+    rating : 3.9,
+
+  },
+  {
+    name: "Amit",
+    role: "Diabetes Care Client, 45",
+    content:
+      "My sugar levels were always unstable, and I relied heavily on medication. With Dt Saloni’s guidance, I learned how to eat smart and manage my diabetes naturally. My HbA1c reduced from 10.9 to 7.5 in 3 months. My doctor was amazed at the progress.",
+    rating: 4.7,
+  },
+  {
+    name: "Karan",
+    role: "Weight Loss Client, 28",
+    content:
+      "What I love most about this programme is the constant support. The daily motivation on WhatsApp kept me accountable, and the personalised plan felt like it was made just for me. It’s more than a diet- it’s a lifestyle change.",
+    rating: 1.4,
   },
 ];
 
 const TestimonialsSection = () => {
+  const [showAll, setShowAll] = useState(false);
+
+  // Show only 3 testimonials on main page when collapsed
+  const displayedTestimonials = showAll
+    ? testimonials
+    : testimonials.slice(0, 3);
+
+  // Helper to render decimal star ratings
+  const renderStars = (rating) => {
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+      if (rating >= i) {
+        // Full star
+        stars.push(
+          <Star key={i} className="w-5 h-5 text-yellow-500 fill-yellow-500" />
+        );
+      } else if (rating >= i - 0.5) {
+        // Half/partial star effect
+        stars.push(
+          <Star
+            key={i}
+            className="w-5 h-5 text-yellow-400 fill-yellow-400 opacity-70"
+          />
+        );
+      } else {
+        // Empty star
+        stars.push(<Star key={i} className="w-5 h-5 text-gray-300" />);
+      }
+    }
+
+    return <div className="flex gap-1 mb-4">{stars}</div>;
+  };
+
   return (
     <section id="testimonials" className="section-padding bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
+
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
-          <span className="font-body text-sm font-semibold text-accent uppercase tracking-wider">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="font-body text-xl md:text-2xl font-semibold text-green-600 uppercase tracking-wider">
+
             Success Stories
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
-            Client{" "}
-            <span className="text-primary">Transformations</span>
+
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
+            Client <span className="text-emerald-700">Transformations</span>
           </h2>
-          <p className="font-body text-lg text-muted-foreground">
-            Real stories from real people who transformed their health with Nutrivio's 
-            personalized nutrition programs.
+
+          <p className="font-body text-lg text-gray-600">
+            Real stories from real people who transformed their health through
+            science-backed personalized nutrition programs.
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {testimonials.map((testimonial, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {displayedTestimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="bg-card border-border hover:shadow-xl transition-all duration-300 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-white border-gray-200 hover:shadow-lg transition-all duration-300"
             >
-              <CardContent className="p-6 md:p-8">
+              <CardContent className="p-6">
+
                 {/* Quote Icon */}
-                <div className="mb-6">
-                  <Quote className="w-10 h-10 text-accent/50" />
+                <div className="mb-4">
+                  <Quote className="w-10 h-10 text-emerald-200" />
                 </div>
 
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 text-accent fill-accent"
-                    />
-                  ))}
-                </div>
+                {/* Decimal Rating */}
+                {renderStars(testimonial.rating)}
 
                 {/* Content */}
-                <p className="font-body text-muted-foreground leading-relaxed mb-6">
+                <p className="font-body text-gray-700 leading-relaxed mb-6">
                   "{testimonial.content}"
                 </p>
 
                 {/* Author */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span className="font-display text-lg font-bold text-primary">
+                  <div className="w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center">
+                    <span className="font-display text-lg font-bold text-emerald-700">
                       {testimonial.name.charAt(0)}
                     </span>
                   </div>
+
                   <div>
-                    <h4 className="font-display font-semibold text-card-foreground">
+                    <h4 className="font-display font-semibold text-gray-900">
                       {testimonial.name}
                     </h4>
-                    <p className="font-body text-sm text-muted-foreground">
+
+                    <p className="font-body text-sm text-gray-500">
                       {testimonial.role}
                     </p>
                   </div>
                 </div>
+
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Note for future testimonials */}
-        <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-          <div className="inline-block bg-accent/10 border border-accent/30 rounded-2xl px-6 py-4">
-            <p className="font-body text-muted-foreground">
-              ✨ Client testimonials coming soon! Your transformation story could be featured here.
-            </p>
-          </div>
+        {/* Improved Show All Button */}
+        <div className="text-center mt-12">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="font-body text-lg px-8 py-3 rounded-2xl bg-emerald-700 hover:bg-green-600 text-white shadow-md transition-all duration-300"
+          >
+            {showAll ? "Show Less Testimonials" : "Show All Testimonials"}
+          </button>
         </div>
+
       </div>
     </section>
   );

@@ -35,7 +35,7 @@ const HeroSection = () => {
 
             {/* Heading */}
             <div className="space-y-4">
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl l:text-7xl font-bold text-foreground leading-tight">
                 Saloni Garg
               </h1>
               <p className="font-display text-xl md:text-2xl lg:text-3xl text-primary font-medium">
@@ -73,9 +73,9 @@ const HeroSection = () => {
             {/* Stats */}
             <div className="flex flex-wrap gap-8 justify-center lg:justify-start pt-8">
               {[
-                { value: "500+", label: "Clients Transformed" },
-                { value: "8+", label: "Years Experience" },
-                { value: "6", label: "Specializations" },
+                { value: "1000+", label: "Clients Transformed" },
+                { value: "3+", label: "Years Experience" },
+                
               ].map((stat) => (
                 <div key={stat.label} className="text-center lg:text-left">
                   <p className="font-display text-3xl md:text-4xl font-bold text-primary">

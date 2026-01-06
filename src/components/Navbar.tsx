@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+// Import favicon
+import favicon from "/favicon.ico";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -13,7 +16,7 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (href: string) => {
+  const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -25,19 +28,23 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
+          
+          {/* Improved Logo Section */}
           <a
             href="#home"
             onClick={(e) => {
               e.preventDefault();
               scrollToSection("#home");
             }}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3"
           >
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center group-hover:bg-accent transition-colors duration-300">
-              <Leaf className="w-5 h-5 text-primary-foreground" />
-            </div>
-            <span className="font-display text-xl md:text-2xl font-semibold text-foreground">
+            <img
+              src={favicon}
+              alt="Nutrivio Logo"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+
+            <span className="text-2xl font-semibold text-foreground">
               Nutrivio
             </span>
           </a>
@@ -62,13 +69,12 @@ const Navbar = () => {
 
           {/* CTA Button - Desktop */}
           <div className="hidden md:block">
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSclSGWTAiX0pRgrMdVTh72OwWQm9W-LEU8VJKTFYTYKGx7bgg/viewform?usp=header">
-    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-body font-medium">
-      Book Consultation
-    </Button>
-  </a>
-</div>
-
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSclSGWTAiX0pRgrMdVTh72OwWQm9W-LEU8VJKTFYTYKGx7bgg/viewform?usp=header">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-body font-medium">
+                Book Consultation
+              </Button>
+            </a>
+          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -97,12 +103,18 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
+
               <Button
-                onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSclSGWTAiX0pRgrMdVTh72OwWQm9W-LEU8VJKTFYTYKGx7bgg/viewform?usp=header", "_self")}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-body font-medium">
+                onClick={() =>
+                  window.open(
+                    "https://docs.google.com/forms/d/e/1FAIpQLSclSGWTAiX0pRgrMdVTh72OwWQm9W-LEU8VJKTFYTYKGx7bgg/viewform?usp=header",
+                    "_self"
+                  )
+                }
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-body font-medium"
+              >
                 Book Consultation
               </Button>
-
             </div>
           </div>
         )}

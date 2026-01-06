@@ -40,12 +40,10 @@ const AboutSection = () => {
               {/* Main content card */}
               <div className="relative bg-card rounded-3xl p-8 md:p-10 shadow-xl border border-border">
                 <div className="space-y-6">
-                  <div className="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center">
-                    <span className="font-display text-3xl font-bold text-primary">SG</span>
-                  </div>
+                  
                   
                   <div className="space-y-4">
-                    <h3 className="font-display text-2xl font-bold text-foreground">
+                    <h3 className="font-display text-3xl font-bold text-foreground">
                       Qualifications & Expertise
                     </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

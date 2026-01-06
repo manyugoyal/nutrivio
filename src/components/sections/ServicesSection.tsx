@@ -14,14 +14,14 @@ const services = [
     icon: Heart,
     title: "PCOD / PCOS Management",
     description:
-      "Managing PCOD/PCOS requires more than just diet—it's about restoring balance. Our programs target insulin resistance, reduce inflammation, and support hormonal health through tailored nutrition. With the right foods and lifestyle guidance, you'll experience improved energy, reduced symptoms, and greater cycle regularity.",
+      "Managing PCOD/PCOS requires more than just diet , it is about restoring balance. Our programs target insulin resistance, reduce inflammation, and support hormonal health through tailored nutrition. With the right foods and lifestyle guidance, you'll experience improved energy, reduced symptoms, and greater cycle regularity.",
     color: "bg-accent/20 text-accent",
   },
   {
     icon: Zap,
     title: "Thyroid Balance",
     description:
-      "Thyroid health impacts energy, metabolism, and overall wellness. We create nutrition plans that support thyroid hormone production and address both hypo- and hyperthyroidism. By combining targeted foods with stress-reducing lifestyle tips, you'll feel more energized, balanced, and in control of your health.",
+      "Thyroid health impacts energy, metabolism, and overall wellness. We create nutrition plans that support thyroid hormone production and address both hypothyrodism and hyperthyroidism. By combining targeted foods with stress-reducing lifestyle tips, you'll feel more energized, balanced, and in control of your health.",
     color: "bg-primary/10 text-primary",
   },
   {
@@ -60,7 +60,7 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4 md:px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
-          <span className="font-body text-sm font-semibold text-accent uppercase tracking-wider">
+          <span className="font-body text-xl font-semibold text-accent uppercase tracking-wider">
             What I Offer
           </span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
