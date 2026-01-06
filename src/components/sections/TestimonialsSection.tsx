@@ -8,14 +8,14 @@ const testimonials = [
     role: "PCOS Management Client, 29",
     content:
       "I struggled with weight gain problem for years, trying every diet without success. Dt Saloni’s personalised plan finally helped me shed kilos in a healthy, sustainable way. I feel lighter, more energetic, and confident without ever feeling deprived.",
-    rating: 0.8,
+    rating: 4.8,
   },
   {
     name: "Neha",
     role: "Hormonal Health Client, 26",
     content:
       "Living with PCOS was exhausting, but Dt Saloni helped me. The diet plan balanced my hormones, reduced bloating, and even regulated my cycle. I finally feel in control of my health again.",
-    rating: 1.6,
+    rating: 4.6,
   },
   {
     name: "Simran",
@@ -49,7 +49,7 @@ rating: 4.2,
     role: "Weight Loss Client, 28",
     content:
       "What I love most about this programme is the constant support. The daily motivation on WhatsApp kept me accountable, and the personalised plan felt like it was made just for me. It’s more than a diet- it’s a lifestyle change.",
-    rating: 1.4,
+    rating: 4.4,
   },
 ];
 
@@ -94,16 +94,16 @@ const TestimonialsSection = () => {
 
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="font-body text-xl md:text-2xl font-semibold text-green-600 uppercase tracking-wider">
+          <span className="font-body text-xl md:text-2xl font-semibold text-gray-900 uppercase tracking-wider">
 
             Success Stories
           </span>
 
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mt-4 mb-6">
-            Client <span className="text-emerald-700">Transformations</span>
+            Client <span className="text-gray-900">Transformations</span>
           </h2>
 
-          <p className="font-body text-lg text-gray-600">
+          <p className="font-body text-lg text-gray-900">
             Real stories from real people who transformed their health through
             science-backed personalized nutrition programs.
           </p>
@@ -159,7 +159,7 @@ const TestimonialsSection = () => {
         <div className="text-center mt-12">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="font-body text-lg px-8 py-3 rounded-2xl bg-emerald-700 hover:bg-green-600 text-white shadow-md transition-all duration-300"
+            className="font-semibold text-l px-8 py-3 rounded-2xl bg-primary hover:text-gray-900 text-white shadow-md transition-all duration-300"
           >
             {showAll ? "Show Less Testimonials" : "Show All Testimonials"}
           </button>
